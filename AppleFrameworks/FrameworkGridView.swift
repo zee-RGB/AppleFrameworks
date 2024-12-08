@@ -17,87 +17,45 @@ struct FrameworkGridView: View {
 
     var body: some View {
 
-        ZStack {
-            Color.black
-                .ignoresSafeArea()
-
-            LazyVGrid(columns: columnsX3) {
-
-                FrameworkImageNameView(
-                    imageName: "app-clip", frameworkName: "App Clips")
-
-                FrameworkImageNameView(
-                    imageName: "arkit", frameworkName: "ARKit")
-
-                FrameworkImageNameView(
-                    imageName: "carplay", frameworkName: "CarPlay")
-
-                FrameworkImageNameView(
-                    imageName: "catalyst", frameworkName: "Catalyst")
-
-                FrameworkImageNameView(
-                    imageName: "classkit", frameworkName: "ClassKit")
-
-                FrameworkImageNameView(
-                    imageName: "cloudkit", frameworkName: "Cloud Kit")
-
-                FrameworkImageNameView(
-                    imageName: "coreml", frameworkName: "Core ML")
-
-                FrameworkImageNameView(
-                    imageName: "healthkit", frameworkName: "HealthKit")
-
-                FrameworkImageNameView(
-                    imageName: "metal", frameworkName: "Metal")
-
-                FrameworkImageNameView(
-                    imageName: "sf-symbols", frameworkName: "SF Symbols")
-
-                FrameworkImageNameView(
-                    imageName: "sirikit", frameworkName: "SiriKit")
-
-                FrameworkImageNameView(
-                    imageName: "spritekit", frameworkName: "SpriteKit")
-
-                FrameworkImageNameView(
-                    imageName: "swiftui", frameworkName: "SwiftUI")
-
-                FrameworkImageNameView(
-                    imageName: "test-flight", frameworkName: "Test Flight")
-
-                FrameworkImageNameView(
-                    imageName: "wallet", frameworkName: "Wallet")
-
-                FrameworkImageNameView(
-                    imageName: "widgetkit", frameworkName: "WidgetKit")
-
+            NavigationView {
+                ScrollView {
+                    LazyVGrid(columns: columnsX3) {
+                        
+                        ForEach(FrameworkData.frameworks){ framework in
+                            
+                            FrameworkImageNameView(framework: framework)
+                            
+                        }
+                        
+                    }
+                    .navigationTitle("🍎 Frameworks 🍏")
+                }
             }
-
-        }
     }
 }
 
 #Preview {
     FrameworkGridView()
+        .preferredColorScheme(.dark)
 }
 
 struct FrameworkImageNameView: View {
 
-    let imageName: String
-    let frameworkName: String
+    let framework: Framework
 
     var body: some View {
         VStack {
-            Image(imageName)
+            Image(framework.imageName)
                 .resizable()
                 .frame(width: 80, height: 80)
-            Text(frameworkName)
+            Text(framework.name)
                 .foregroundStyle(Color.white)
                 .font(.title2)
                 .fontWeight(.semibold)
                 .scaledToFit()
                 .minimumScaleFactor(0.6)
         }
+        .padding()
     }
 }
 

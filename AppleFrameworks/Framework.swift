@@ -5,7 +5,12 @@
 //  Created by zee-RGB on 7/12/2024.
 //
 
-struct Framework {
+import Foundation
+
+struct Framework: Hashable, Identifiable {
+    
+    let id = UUID()
+
     let name: String
     let imageName: String
     let urlString: String
@@ -13,7 +18,7 @@ struct Framework {
 }
 
 
-struct MockData {
+struct FrameworkData {
 
     static let frameworks = [
         Framework(name: "App Clips",
