@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		DA54DB0B2D03965E0080796B /* AppleFrameworks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = AppleFrameworks.app; path = "/Users/z4/Documents/Projects/SA/AppleFrameworks/build/Debug-iphoneos/AppleFrameworks.app"; sourceTree = "<absolute>"; };
+		DA5D41982D0A67690091933B /* AppleFrameworks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleFrameworks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -40,6 +40,7 @@
 		DA54DB0C2D03965E0080796B /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				DA5D41982D0A67690091933B /* AppleFrameworks.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -66,7 +67,7 @@
 			packageProductDependencies = (
 			);
 			productName = AppleFrameworks;
-			productReference = DA54DB0B2D03965E0080796B /* AppleFrameworks.app */;
+			productReference = DA5D41982D0A67690091933B /* AppleFrameworks.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
